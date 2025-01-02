@@ -57,3 +57,35 @@ function words(str1,str2){
 }
 console.log(words("Listen", "Silent"))
 console.log(words("React", "Angular"))
+
+
+// Find the Most Frequent Element in an Array
+
+function mostFrequent(arr) {
+    if (arr.length === 0) return null; // Handle empty array
+
+    const frequencyMap = {}; // To store element frequencies
+    let maxCount = 0; // Track the highest frequency
+    let mostFrequentElement = null; // Store the most frequent element
+
+    // Count the frequency of each element
+    for (let element of arr) {
+        frequencyMap[element] = (frequencyMap[element] || 0) + 1;
+
+        // Update the most frequent element if needed
+        if (frequencyMap[element] > maxCount) {
+            maxCount = frequencyMap[element];
+            mostFrequentElement = element;
+        }
+    }
+
+    return mostFrequentElement;
+}
+
+// Test cases
+console.log(mostFrequent([1, 2, 3, 1, 2, 1])); // Output: 1
+console.log(mostFrequent(["apple", "banana", "apple", "orange", "banana", "banana"])); // Output: "banana"
+console.log(mostFrequent([true, false, true, true, false])); // Output: true
+console.log(mostFrequent([])); // Output: null
+
+
