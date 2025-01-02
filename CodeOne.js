@@ -43,3 +43,17 @@ console.log(findMax(50, 40, 60)); // Output: 60
 console.log(isPalindrome("hello")); // false
 console.log(isPalindrome("A man, a plan, a canal: Panama")); // true
 console.log(isPalindrome("No lemon, no melon")); // true
+
+
+//Write a function isAnagram that takes two strings as input and determines if they are anagrams of each other.
+//Two strings are anagrams if they use the exact same characters in the same frequency but arranged differently.
+//Ignore spaces and capitalization.
+
+    // comparing two strings that are entered.
+function words(str1,str2){
+    const formating=(strt)=> str1.toLowerCase().replace(/\s+/g, '').split('').sort().join();
+
+    return formating(str1)===formating(str2);
+}
+console.log(words("Listen", "Silent"))
+console.log(words("React", "Angular"))
