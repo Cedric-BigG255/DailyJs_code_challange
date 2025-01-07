@@ -88,4 +88,24 @@ console.log(mostFrequent(["apple", "banana", "apple", "orange", "banana", "banan
 console.log(mostFrequent([true, false, true, true, false])); // Output: true
 console.log(mostFrequent([])); // Output: null
 
+// phone number formating
 
+function change(input) {
+    var changeone = input.replace(/[^0-9]/g, ""); // Remove all non-numeric characters
+
+    // Check if the cleaned string has exactly 10 digits
+    if (changeone.length !== 10) { 
+        return "Invalid phone number";
+    } else {
+        // Format the cleaned number
+        let formatone1 = `(${changeone.slice(0, 3)}) ${changeone.slice(3, 6)}-${changeone.slice(6)}`;
+        return formatone1;
+    }
+}
+
+// Test cases
+console.log(change("(123) 456-7890")); // Output: "(123) 456-7890"
+console.log(change("1234567890"));     // Output: "(123) 456-7890"
+console.log(change("+1 (123) 456-7890")); // Output: "(123) 456-7890"
+console.log(change("123-45-678"));     // Output: "Invalid phone number"
+console.log(change("12345678901"));    // Output: "Invalid phone number"
