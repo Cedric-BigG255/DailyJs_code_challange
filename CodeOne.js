@@ -109,3 +109,16 @@ console.log(change("1234567890"));     // Output: "(123) 456-7890"
 console.log(change("+1 (123) 456-7890")); // Output: "(123) 456-7890"
 console.log(change("123-45-678"));     // Output: "Invalid phone number"
 console.log(change("12345678901"));    // Output: "Invalid phone number"
+
+// removing duplicate number into array
+
+function removeDuplicates(array) {
+    return [...new Set(array)];
+}
+
+// Test cases
+console.log(removeDuplicates([1, 2, 3, 4, 3, 2, 1, 5])); // Output: [1, 2, 3, 4, 5]
+console.log(removeDuplicates([])); // Output: []
+console.log(removeDuplicates([42])); // Output: [42]
+console.log(removeDuplicates([7, 7, 7, 7])); // Output: [7]
+
