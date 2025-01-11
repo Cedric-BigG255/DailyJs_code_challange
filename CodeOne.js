@@ -122,3 +122,14 @@ console.log(removeDuplicates([])); // Output: []
 console.log(removeDuplicates([42])); // Output: [42]
 console.log(removeDuplicates([7, 7, 7, 7])); // Output: [7]
 
+// reversing a string without reverse()
+
+function reverseString(input) {
+  let reversed = ""; // Initialize an empty string
+  for (let i = input.length - 1; i >= 0; i--) {
+    reversed += input[i]; // Add each character from the end
+  }
+  return reversed;
+}
+
+console.log(reverseString("hello")); // Output: "olleh"
