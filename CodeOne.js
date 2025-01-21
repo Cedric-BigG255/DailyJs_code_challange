@@ -161,3 +161,29 @@ console.log(findLongestWord("I love JavaScript programming!")); // Output: "prog
 console.log(findLongestWord("123 4567 eight9ten!!!")); // Output: "eight9ten"
 console.log(findLongestWord("Hello, world!")); // Output: "Hello"
 
+
+// Write a function to calculate the sum of all prime numbers up to a given number n.
+
+function isPrime(num) {
+  if (num < 2) return false; // Numbers less than 2 are not prime
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) return false; // Not prime if divisible by i
+  }
+  return true;
+}
+
+function sumOfPrimes(n) {
+  let sum = 0;
+  for (let i = 2; i <= n; i++) {
+    if (isPrime(i)) {
+      sum += i; // Add to sum if the number is prime
+    }
+  }
+  return sum;
+}
+
+// Testing the function
+console.log(sumOfPrimes(10)); // Output: 17
+console.log(sumOfPrimes(20)); // Output: 77
+console.log(sumOfPrimes(50)); // Output: 328
+
