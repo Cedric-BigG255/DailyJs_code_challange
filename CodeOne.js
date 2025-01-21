@@ -133,3 +133,31 @@ function reverseString(input) {
 }
 
 console.log(reverseString("hello")); // Output: "olleh"
+
+
+//Find the Longest Word in a Sentence
+
+function findLongestWord(sentence) {
+    // Step 1: Remove any non-alphanumeric characters except spaces
+    const cleanedSentence = sentence.replace(/[^a-zA-Z\s]/g, '');
+    
+    // Step 2: Split the sentence into words
+    const words = cleanedSentence.split(' ');
+    
+    // Step 3: Find the longest word
+    let longestWord = '';
+    for (let word of words) {
+        if (word.length > longestWord.length) {
+            longestWord = word;
+        }
+    }
+    
+    return longestWord;
+}
+
+// Test Cases
+console.log(findLongestWord("The quick brown fox jumped over the lazy dog")); // Output: "jumped"
+console.log(findLongestWord("I love JavaScript programming!")); // Output: "programming"
+console.log(findLongestWord("123 4567 eight9ten!!!")); // Output: "eight9ten"
+console.log(findLongestWord("Hello, world!")); // Output: "Hello"
+
