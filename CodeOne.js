@@ -187,3 +187,23 @@ console.log(sumOfPrimes(10)); // Output: 17
 console.log(sumOfPrimes(20)); // Output: 77
 console.log(sumOfPrimes(50)); // Output: 328
 
+// finding out missing numbers
+
+function findMissingNumber(arr) {
+    // Step 1: Find the expected total sum of numbers from 1 to n
+    const n = arr.length + 1; // The array is missing one number
+    const expectedSum = (n * (n + 1)) / 2;
+
+    // Step 2: Calculate the actual sum of the array
+    const actualSum = arr.reduce((acc, num) => acc + num, 0);
+
+    // Step 3: The missing number is the difference
+    return expectedSum - actualSum;
+}
+
+// Example Test Cases
+console.log(findMissingNumber([1, 2, 3, 5])); // Output: 4
+console.log(findMissingNumber([7, 8, 9, 10, 12])); // Output: 11
+console.log(findMissingNumber([2, 3, 4, 5, 6])); // Output: 1
+console.log(findMissingNumber([1, 2, 4, 5, 6])); // Output: 3
+
