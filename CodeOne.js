@@ -207,3 +207,25 @@ console.log(findMissingNumber([7, 8, 9, 10, 12])); // Output: 11
 console.log(findMissingNumber([2, 3, 4, 5, 6])); // Output: 1
 console.log(findMissingNumber([1, 2, 4, 5, 6])); // Output: 3
 
+// Flatten a Nested Array 
+
+function flattenArray(arr) {
+  let result = [];
+  
+  for (let element of arr) {
+    if (Array.isArray(element)) {
+      // Recursively flatten the nested array
+      result = result.concat(flattenArray(element));
+    } else {
+      result.push(element); // Add non-array elements to the result
+    }
+  }
+  
+  return result;
+}
+
+// Test cases
+console.log(flattenArray([1, [2, [3, [4, [5]]]], 6])); // Expected output: [1, 2, 3, 4, 5, 6]
+console.log(flattenArray([1, [2, [3]], 4, [5]]));       // Expected output: [1, 2, 3, 4, 5]
+console.log(flattenArray([]));                          // Expected output: []
+console.log(flattenArray([1, "a", [true, [null]]]));    // Expected output: [1, "a", true, null]
