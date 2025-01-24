@@ -229,3 +229,25 @@ console.log(flattenArray([1, [2, [3, [4, [5]]]], 6])); // Expected output: [1, 2
 console.log(flattenArray([1, [2, [3]], 4, [5]]));       // Expected output: [1, 2, 3, 4, 5]
 console.log(flattenArray([]));                          // Expected output: []
 console.log(flattenArray([1, "a", [true, [null]]]));    // Expected output: [1, "a", true, null]
+
+
+/*Write a function called debounce that prevents a function from being called multiple times in quick succession. The debounce function should take two arguments:
+
+The function to debounce.
+The delay in milliseconds.
+When the debounce function is invoked, it should ensure that the passed function executes only if a certain amount of time has passed since the last call. */
+
+function debounce(func, delay) {
+  let timeout; // Variable to store the timer reference
+  
+  return function (...args) {
+    // Clear the previous timeout if the function is called again
+    clearTimeout(timeout);
+
+    // Set a new timeout
+    timeout = setTimeout(() => {
+      func.apply(this, args); // Execute the function after the delay
+    }, delay);
+  };
+}
+
